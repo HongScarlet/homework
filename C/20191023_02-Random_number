@@ -6,17 +6,17 @@
 int main(void) {
     int min,max,x;
 
-    printf("請輸入min：\n");
+    printf("Please enter min:\n");
     scanf("%d", &min);
     printf("min = %d\n", min);
-    printf("請輸入max：\n");
+    printf("Please enter max:\n");
     scanf("%d", &max);
-    printf("min = %d\n", max);
+    printf("max = %d\n", max);
     
     if (max>=min)
     {
         x=(rand()%(max-min+1))+min;
-        printf("隨機數 = %d",x);
+        printf("Random Number = %d",x);
     }
     else
     {
