@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>    /* DEL */   
 
 void F_20191030(int *x);
  
@@ -13,6 +12,5 @@ int main ()
  
    printf("a+1 by function =%d\n", a );
 
-   system("PAUSE");    /* DEL */
    return 0;
 }
