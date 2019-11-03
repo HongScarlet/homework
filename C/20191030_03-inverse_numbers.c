@@ -1,5 +1,4 @@
 #include<stdio.h>
-#include <stdlib.h>    /* DEL */ 
 int main()
 {
   int array[1000];
@@ -21,7 +20,6 @@ int main()
   {
        printf("%d ",array[j]);
   }
-   system("PAUSE");    /* DEL */
    return 0;
 }
 
