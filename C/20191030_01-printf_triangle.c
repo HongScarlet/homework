@@ -1,5 +1,4 @@
 #include<stdio.h>
-#include <stdlib.h>    /* DEL */   
 int main() {
     int a,b,i,j,k,x,y;
   printf("Enter side length of triangle: ");
@@ -34,7 +33,6 @@ int main() {
       k=k+2;     /* 每一行多印兩個* */            
       y=y-1;     /* 每一行少印一個空白 */    
   }
- system("PAUSE");    /* DEL */
  return 0;
 } 
   
