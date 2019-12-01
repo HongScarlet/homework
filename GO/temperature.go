@@ -9,7 +9,7 @@ func C2F(x float32) {
 	fmt.Printf("%f C = %f F\n", x, temp)
 }
 
-// F to C
+// F to C 
 func F2C(x float32) {
 	var temp float32
 	temp=(x-32)/1.8
