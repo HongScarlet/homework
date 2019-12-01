@@ -20,4 +20,4 @@ func main() {
 }
 
 // import的function必須放置在gopath下的src內
-// 本題中即是把temperature.go放在 $GOPATH/src/temperature之下
+// 本題中即是把temperature.go放在 $GOPATH/src/temperature之下 
