@@ -52,8 +52,12 @@ func main() {
 
 設置說明
 
-"/"會於網頁上顯示"Hello astaxie!"
+<pre><code>"/"會於網頁上顯示"Hello astaxie!"
+
 "/api*"會於網頁上顯示"Hello astaxie!+/api*"
+</code></pre>
+
+
 
 測試結果
 
