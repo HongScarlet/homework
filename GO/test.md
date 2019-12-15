@@ -1,6 +1,6 @@
 <strong>/api* 測試<strong>
 ***
-    ```golang
+```golang
 package main
 
 import (
@@ -49,4 +49,4 @@ func main() {
 		log.Fatal("ListenAndServe: ", err)
 	}
 }
-    ```
+```
