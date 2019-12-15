@@ -131,7 +131,7 @@ func main() {
 </code></pre>
 ***
 
-<strong>/api1 and /api1/ 及parameter測試<strong>
+<strong>/api1 and /api1/ and parameter測試<strong>
 	
 ```golang
 package main
@@ -213,7 +213,7 @@ func main() {
 
 結論
 <pre><code>分別設置了"/api1"及"/api1/"後，兩者於網頁上的回應不同
-parameter部分正常
+parameter正常
 </code></pre>
 
 
