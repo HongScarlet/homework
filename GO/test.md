@@ -1,1 +1,3 @@
-  1111111111111
+<div class="footer">
+    &copy; 2004 Foo Corporation
+</div>
