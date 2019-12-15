@@ -53,3 +53,5 @@ func main() {
 測試結果
 
 ![image](https://github.com/HongScarlet/homework/blob/master/GO/img/20191211/TEST1.png)
+
+"/api*"無法回應"/api1"之結果，除了"/api*"以外，其餘都導向"/"
