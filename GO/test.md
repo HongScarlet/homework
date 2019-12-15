@@ -49,12 +49,15 @@ func main() {
 	}
 }
 ```
+
+設置說明
+
+"/"會於網頁上顯示"Hello astaxie!"
+"/api*"會於網頁上顯示"Hello astaxie!+/api*"
+
 測試結果
 
 ![image](https://github.com/HongScarlet/homework/blob/master/GO/img/20191211/TEST1.png)
 
-設置說明
-"/"會於網頁上顯示"Hello astaxie!"
-"/api*"會於網頁上顯示"Hello astaxie!+/api*"
 結論
 "/api*"無法回應"/api1"之結果，除了"/api*"以外，其餘都導向"/"
