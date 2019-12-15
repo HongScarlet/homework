@@ -65,7 +65,7 @@ func main() {
 </code></pre>
 
 
-<strong>/api1 and api1/ 測試<strong>
+<strong>/api1 and /api1/ 測試<strong>
 ***
 ```golang
 package main
