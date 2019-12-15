@@ -1,4 +1,3 @@
-***
 <strong>/api* 測試<strong>
 ***
 ```golang
@@ -64,8 +63,8 @@ func main() {
 結論
 <pre><code>"/api*"無法回應"/api1"之結果，除了"/api*"以外，其餘都顯示"/"之回應
 </code></pre>
-
-
+***
+***
 <strong>/api1 and /api1/ 測試<strong>
 ***
 ```golang
@@ -131,7 +130,8 @@ func main() {
 結論
 <pre><code>"/api1"無法回應"/api1/"之結果，並且"/api1/"會顯示"/"之回應
 </code></pre>
-
+***
+***
 
 <strong>/api1 and /api1/ 及parameter測試<strong>
 ***
