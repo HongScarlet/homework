@@ -42,7 +42,6 @@ func sayhelloName1(w http.ResponseWriter, r *http.Request) {
 func main() {
 	http.HandleFunc("/", sayhelloName) //設定訪問的路由
 	http.HandleFunc("/api*", sayhelloName1) //設定訪問的路由	
-	// http.HandleFunc("/api1/", sayhelloName2) //設定訪問的路由	
 
 	err := http.ListenAndServe(":9090", nil) //設定監聽的埠
 	if err != nil {
