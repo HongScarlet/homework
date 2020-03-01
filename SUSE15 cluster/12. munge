@@ -1,0 +1,53 @@
+## 目錄
+* [目錄](#目錄)
+* [Install](#Install)
+* [Check](#Check)
+* [注意事項](#注意事項)
+---
+
+## Install
+
+```bash
+# server
+server :~ # systemctl in munge
+server :~ # systemctl enable munge
+server :~ # systemctl start munge
+
+# client
+client :~ # systemctl in munge
+client :~ # systemctl enable munge
+client :~ # systemctl start munge
+
+# munge.key
+server :~ # scp /etc/munge/munge.key root@192.168.122.30:/etc/munge/.  # 需要將key複製到每台client上!
+server :md5sum /etc/munge/munge.key
+client :md5sum /etc/munge/munge.key
+client :~ # systemctl restart munge
+
+● 要確保 server 跟 client 上的 munge.key 是相同的
+```
+---
+
+## Check
+
+```bash
+server :~ # munge -n
+server :~ # munge -n | unmunge
+server :~ # munge -n | ssh 192.168.122.30 unmunge
+
+client :~ # munge -n
+client :~ # munge -n | unmunge
+client :~ # munge -n | ssh 192.168.122.25 unmunge
+
+
+● 測試 munge -n | ssh hostname unmunge 時必須與其他所有的 server / client 都 Success
+● 若有失敗的狀況，可能是防火牆、munge.key出現問題
+```
+
+![image](https://github.com/HongScarlet/homework/blob/master/SUSE15%20cluster/img/munge/12-2-1.png)  
+
+◎ 在client3(192.168.122.30) 執行 munge -n | ssh 192.168.122.25 unmunge 且 Success  
+---
+
+## 注意事項
+
