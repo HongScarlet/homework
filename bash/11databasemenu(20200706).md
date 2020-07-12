@@ -64,7 +64,6 @@ function main_menu() {
   select OPT in "${OPTIONS[@]}" "quit"; do
     case "$REPLY" in
       1 )
-        # List
         show_table_form
         main_menu
       ;;
@@ -97,6 +96,7 @@ main_menu
 分別執行 顯示表格格式 新增資料 刪除資料 顯示表格所有資料
 add 新增資料時 會要求操作者輸入 Name 及 Phone
 del 刪除資料時 會要求操作者輸入 Id 來刪除
+另外參考課本的範例，製作了簡易的選單功能
 
 本次的測試過程為：
 顯示表格格式 > 顯示表格所有資料 > 新增一筆 Name='AAA' Phone='123456'的資料 >
