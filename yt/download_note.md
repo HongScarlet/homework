@@ -6,7 +6,7 @@
 ---
 
 ## 前置作業
-```bash
+```
 1. 下載yt-dlp>>>[yt-dlp下載連結](https://github.com/yt-dlp/yt-dlp) 
 2. 下載ytarchive>>>[ytarchive下載連結](https://github.com/Kethsar/ytarchive) 
 3. 下載ffmpeg>>>[ffmpeg下載連結](https://ffmpeg.org/download.html)
