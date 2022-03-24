@@ -2,6 +2,8 @@
 * [目錄](#目錄)
 * [前置作業](#前置作業)
 * [兩者差異](#兩者差異)
+* [yt-dlp](#yt-dlp)
+* [ytarchive](#ytarchive)
 * [test](#test)
 ---
 
@@ -19,90 +21,27 @@
 2. 可下載會限內容 (需要cookies)
 3. 可下載直播中的存檔 (但會由執行command當下開始記錄)
 4. 無法預約下載
-
+5. 不可連續載6小時以上
+```
+```
 # ytarchive
 1. 無法下載已完成直播之存檔
 2. 可下載會限內容 (需要cookies)
 3. 可下載直播中的存檔 (即使直播設置為不可回放，也可以從直播開頭開始下載)
 4. 可以預約下載
 ```
-
-Part A
-```bash
-# 編譯vasp前準備
-server :~ # tar -zxvf vasp.6.1.1.tgz
-server :~ # cd vasp.6.1.1/arch
-server :~ # cp makefile.include.linux_intel ./makefile.include   # 把makefile.include.linux_intel複製到上一層並重新命名
-server :~ # cd ..
+```
+# 結論
+1. 下載影片 or 直播已結束，使用 yt-dlp
+2. 直播中 or 直播尚未開始(預約直播)，使用 ytarchive
 ```
 
-```bash
-# 記得source compliter (XXX為compliter安裝路徑)
-server :~ # source  XXX/compilers_and_libraries/linux/bin/compilervars.sh intel64
-server :~ # source  XXX/compilers_and_libraries/linux/mpi/intel64/bin/mpivars.sh
-server :~ # source  XXX/compilers_and_libraries/linux/mkl/bin/mklvars.sh intel64
-
-# 檢查是否source成功
-server :~ # which icc
-server :~ # which ifort
-server :~ # which mpicc
-
-● 順便檢查source的編譯器版本是否正確
-● 如果出現 which no icc in XXX 等訊息代表沒有source成功 (每次ssh登入皆需要重新source)
-
-# 開始編譯
-server :~ # make std
-
-
-● 編譯時間可能較長，請耐心等候
+## yt-dlp
 ```
+# yt-dlp
+1. 可下載已完成直播之存檔
 
-Part B
-```bash
-# 編譯vasp前準備
-● 大致步驟與先前相同，但需要對部分檔案進行修改
-● 可以參考vtst官網>>>[vtstcode安裝教學](http://theory.cm.utexas.edu/vtsttools/installation.html) 
-● 由於vasp/src內 與 vtstcode內皆有chain.F 可以先將其備份
-server :~ # tar -zxvf vasp.6.1.1.tgz
-server :~ # tar -zxvf vtstcode-180.tgz         #解壓縮vtstcode
-server :~ # cp vtstcode-180/* vasp.6.1.1/src/. #把vtstcode複製到vasp/src內
-```
-
-```bash
-# 修改src/main.F
-server :~ # vi main.F
-將
-CALL CHAIN_FORCE(T_INFO%NIONS,DYN%POSION,TOTEN,TIFOR, &
-     LATT_CUR%A,LATT_CUR%B,IO%IU6)
-改為
-CALL CHAIN_FORCE(T_INFO%NIONS,DYN%POSION,TOTEN,TIFOR, &
-     TSIF,LATT_CUR%A,LATT_CUR%B,IO%IU6)
-```
-
-
-```bash
-# 修改src/.objects
-server :~ # vi .objects
-找到chain.o 並在前面加入
-bfgs.o dynmat.o  instanton.o  lbfgs.o sd.o   cg.o dimer.o bbm.o \
-fire.o lanczos.o neb.o  qm.o opt.o
-
-例如
-bfgs.o dynmat.o  instanton.o  lbfgs.o sd.o   cg.o dimer.o bbm.o \
-fire.o lanczos.o neb.o  qm.o opt.o \
-chain.o
 
 ```
-
-```bash
-# 增加solvent
-server :~ # vi makefile.include
-CPP_OPTIONS 加入 -Dsol_compat
-
-例如
-
-```
-
----
 
 ## test
