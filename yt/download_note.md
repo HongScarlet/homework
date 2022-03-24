@@ -7,10 +7,10 @@
 
 ## 前置作業
 ```bash
-# 1. 下載yt-dlp>>>[yt-dlp下載連結](https://github.com/yt-dlp/yt-dlp) 
-# 2. 下載ytarchive>>>[ytarchive下載連結](https://github.com/Kethsar/ytarchive) 
-# 3. 下載ffmpeg>>>[ffmpeg下載連結](https://ffmpeg.org/download.html)
-# 4. 將上述執行檔路徑加入環境變數中(PATH)
+1. 下載yt-dlp>>>[yt-dlp下載連結](https://github.com/yt-dlp/yt-dlp) 
+2. 下載ytarchive>>>[ytarchive下載連結](https://github.com/Kethsar/ytarchive) 
+3. 下載ffmpeg>>>[ffmpeg下載連結](https://ffmpeg.org/download.html)
+4. 將上述執行檔路徑加入環境變數中(PATH)
 
 ```
 ## 兩者差異
