@@ -1,20 +1,20 @@
-## 目錄
-* [目錄](#目錄)
-* [前置作業](#前置作業)
-* [兩者差異](#兩者差異)
+## Content
+* [Content](#Content)
+* [Preparation](#Preparation)
+* [Difference](#Difference)
 * [yt-dlp](#yt-dlp)
 * [ytarchive](#ytarchive)
 * [test](#test)
 ---
 
-## 前置作業
+## Preparation
 
 1. 下載yt-dlp>>>[yt-dlp下載連結](https://github.com/yt-dlp/yt-dlp) 
 2. 下載ytarchive>>>[ytarchive下載連結](https://github.com/Kethsar/ytarchive) 
 3. 下載ffmpeg>>>[ffmpeg下載連結](https://ffmpeg.org/download.html)
 4. 將上述執行檔路徑加入環境變數中(PATH)
 
-## 兩者差異
+## Difference
 ```
 # yt-dlp
 1. 可下載已完成直播之存檔
@@ -69,5 +69,36 @@ yt-dlp --format 301 --write-thumbnail --cookies=(path_to_your_cookies_file) -o "
   ● 刪檔直播建議使用 ytarchive 或者是 yt-dlp 由直播開始時就用m3u8下載，若直播結束後才使用yt-dlp下載，有機會載到一半時轉私人
   
 ```
+## ytarchive
+```
+# 常用參數
+  -o                  輸出路徑及檔案名稱
+  -w                  用於預約下載(若直播尚未開始且未加此參數，程式依舊會詢問是否要wait)  
+  --cookies=          cookies的檔案位置
+  --write-thumbnail   下載直播縮圖
+  --merge             自動執行ffmpeg合併檔案
+```
+```
+# example
+ytarchive [yt_url] [quality]
+  ● quality若未指定，程式會詢問要下載的quality，可以直接使用best
+  
+ytarchive --merge --write-thumbnail [yt_url] best
+  ● 下載最高品質影片+音訊，並同時下載縮圖
+  
+ytarchive --merge --write-thumbnail -o "(path_to_your_foldor)\[%(upload_date)s]%(title)s-%(id)s" [yt_url] best
+  ● 下載至(path_to_your_foldor)，並且命名成 [上傳日期]標題-影片ID.副檔名
+  ● 詳細output格式請參照原作者github
+  
+ytarchive --merge --write-thumbnail --cookies=(path_to_your_cookies_file) -o "(path_to_your_foldor)\[%(upload_date)s]%(title)s-%(id)s" [yt_url] best
+  ● 使用cookies，會限影片/直播需要cookies下載
+  ● 若失敗可以嘗試重新撈cookie (ex：加新會員/帳號有重新登入過等等)
+  
+ytarchive -w --merge --write-thumbnail --cookies=(path_to_your_cookies_file) -o "(path_to_your_foldor)\[%(upload_date)s]%(title)s-%(id)s" [yt_url] best
+  ● -w 參數可以用於預約下載，若command執行時直播尚未開始，則會提示直播預定於多久後開始
+  ● 直播中途才下command，即使設定為不可回拉 ytarchive也可以從頭開始下載
+  
+```
+
 
 ## test
